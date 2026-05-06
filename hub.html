@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Le Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="back-link">← Retour système</a>
+        <button id="theme-toggle" class="btn-icon" aria-label="Changer de thème">
+            <span class="icon-moon">🌙</span>
+            <span class="icon-sun">☀️</span>
+        </button>
+    </nav>
+
+    <main class="hub-container">
+        <header class="hub-header">
+            <h2>Bibliothèque de Jeux</h2>
+            <p>Sélectionnez un module pour commencer.</p>
+        </header>
+
+        <section class="games-grid">
+            <article class="game-card">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/2048-master.png');"></div>
+                </div>
+                <div class="card-content">
+                    <h3 class="game-title">2048</h3>
+                    <p class="game-desc">2048 est un jeu de réflexion où l’on fait glisser des tuiles sur une grille 4x4 pour fusionner les mêmes nombres et atteindre la tuile 2048. Il a été créé par Gabriele Cirulli en 2014 et est connu pour être simple à comprendre mais difficile à maîtriser.</p>
+                    <a href="assets/games/2048-master/index.html" class="btn-secondary">Exécuter</a>
+                </div>
+            </article>
+
+            <article class="game-card">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/cover-game-2.jpg');"></div>
+                </div>
+                <div class="card-content">
+                    <h3 class="game-title">Aura Racer</h3>
+                    <p class="game-desc">Course à grande vitesse dans des environnements générés procéduralement. Maîtrisez le drift lumineux.</p>
+                    <a href="assets/games/jeu2/index.html" class="btn-secondary">Exécuter</a>
+                </div>
+            </article>
+            
+            </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Nexus Project.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
