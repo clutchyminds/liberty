@@ -18,34 +18,157 @@
 
     <main class="hub-container">
         <header class="hub-header">
-            <h2>Bibliothèque de Jeux</h2>
+            <h2>BIBLIOTHÈQUE_JEUX</h2>
             <p>Sélectionnez un module pour commencer.</p>
+
+            <div class="controls">
+                <input type="text" id="search-input" placeholder="RECHERCHER_NOM..." aria-label="Rechercher un jeu">
+                <select id="filter-tags" aria-label="Filtrer par catégorie">
+                    <option value="all">TOUS_LES_MODULES</option>
+                    <option value="arcade">TYPE: ARCADE</option>
+                    <option value="tactique">TYPE: TACTIQUE</option>
+                    <option value="reflexion">TYPE: RÉFLEXION</option>
+                    <option value="mini">PETIT_JEU</option>
+                </select>
+            </div>
         </header>
 
-        <section class="games-grid">
-            <article class="game-card">
+        <section class="games-grid" id="games-grid">
+            <article class="game-card" data-name="2048" data-tags="tactique reflexion logic">
                 <div class="card-image-wrapper">
                     <div class="image-placeholder" style="background-image: url('assets/img/2048-master.png');"></div>
                 </div>
                 <div class="card-content">
+                    <span class="tag-label">TACTIQUE / LOGIC</span>
                     <h3 class="game-title">2048</h3>
-                    <p class="game-desc">2048 est un jeu de réflexion où l’on fait glisser des tuiles sur une grille 4x4 pour fusionner les mêmes nombres et atteindre la tuile 2048. Il a été créé par Gabriele Cirulli en 2014 et est connu pour être simple à comprendre mais difficile à maîtriser.</p>
-                    <a href="assets/games/2048-master/index.html" class="btn-secondary">Exécuter</a>
+                    <p class="game-desc">2048 est un jeu de réflexion où l’on fait glisser des tuiles sur une grille 4x4 pour fusionner les mêmes nombres.</p>
+                    <a href="assets/games/2048-master/index.html" class="btn-secondary">EXÉCUTER</a>
                 </div>
             </article>
 
-            <article class="game-card">
+            <article class="game-card" data-name="sinuous" data-tags="action mini">
                 <div class="card-image-wrapper">
-                    <div class="image-placeholder" style="background-image: url('assets/img/cover-game-2.jpg');"></div>
+                    <div class="image-placeholder" style="background-image: url('assets/img/sinuous.png');"></div>
                 </div>
                 <div class="card-content">
-                    <h3 class="game-title">Aura Racer</h3>
-                    <p class="game-desc">Course à grande vitesse dans des environnements générés procéduralement. Maîtrisez le drift lumineux.</p>
-                    <a href="assets/games/jeu2/index.html" class="btn-secondary">Exécuter</a>
+                    <span class="tag-label">ACTION / FLUIDITÉ</span>
+                    <h3 class="game-title">Sinuous</h3>
+                    <p class="game-desc">Guidez votre particule et évitez les collisions. Conçu pour le tactile.</p>
+                    <a href="assets/games/sinuous/index.html" class="btn-secondary">EXÉCUTER</a>
                 </div>
             </article>
+
+            <article class="game-card" data-name="breaklock" data-tags="reflexion mini">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/breaklock.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">RÉFLEXION / LOGIQUE</span>
+                    <h3 class="game-title">BreakLock</h3>
+                    <p class="game-desc">Trouvez le schéma de déverrouillage secret. Un puzzle pur et minimaliste.</p>
+                    <a href="assets/games/breaklock/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="underground" data-tags="action arcade">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/underground.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">ACTION / EXPLORATION</span>
+                    <h3 class="game-title">Underground</h3>
+                    <p class="game-desc">Creusez, gérez votre énergie et ramassez des minerais précieux.</p>
+                    <a href="assets/games/underground/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="bunny jump" data-tags="arcade mini">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/bunny-jump.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">ARCADE / INFINI</span>
+                    <h3 class="game-title">Bunny Jump</h3>
+                    <p class="game-desc">Sautez de plateforme en plateforme sans tomber. Rapide et addictif.</p>
+                    <a href="assets/games/bunny-jump/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="color flood" data-tags="reflexion mini">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/color-flood.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">RÉFLEXION / COULEURS</span>
+                    <h3 class="game-title">Color Flood</h3>
+                    <p class="game-desc">Remplissez toute la grille avec une seule couleur en un minimum de coups.</p>
+                    <a href="assets/games/color-flood/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="evil glitch" data-tags="tir action">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/evil-glitch.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">TIR / GLITCH-ART</span>
+                    <h3 class="game-title">Evil Glitch</h3>
+                    <p class="game-desc">Détruisez les bugs avant qu'ils ne corrompent votre espace de jeu.</p>
+                    <a href="assets/games/evil-glitch/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="circle it" data-tags="arcade mini">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/circle-it.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">ARCADE / TIMING</span>
+                    <h3 class="game-title">Circle-It</h3>
+                    <p class="game-desc">Touchez l'écran au bon moment pour rester dans l'orbite. Un jeu de pur réflexe.</p>
+                    <a href="assets/games/circle-it/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="mines" data-tags="reflexion tactique">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/mines.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">RÉFLEXION / TACTIQUE</span>
+                    <h3 class="game-title">Mines Hex</h3>
+                    <p class="game-desc">Le démineur classique revisité sur une grille hexagonale optimisée tactile.</p>
+                    <a href="assets/games/mines/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="react" data-tags="action mini">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/react.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">ACTION / RÉFLEXE</span>
+                    <h3 class="game-title">React</h3>
+                    <p class="game-desc">Mesurez votre temps de réaction. Soyez le plus rapide lors de l'alerte.</p>
+                    <a href="assets/games/react/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
+            <article class="game-card" data-name="hei" data-tags="reflexion mini">
+                <div class="card-image-wrapper">
+                    <div class="image-placeholder" style="background-image: url('assets/img/hei.png');"></div>
+                </div>
+                <div class="card-content">
+                    <span class="tag-label">RÉFLEXION / ZEN</span>
+                    <h3 class="game-title">HEI</h3>
+                    <p class="game-desc">Un puzzle abstrait basé sur le son et la géométrie. Très reposant sur tablette.</p>
+                    <a href="assets/games/hei/index.html" class="btn-secondary">EXÉCUTER</a>
+                </div>
+            </article>
+
             
-            </section>
+        </section>
+
     </main>
 
     <footer>

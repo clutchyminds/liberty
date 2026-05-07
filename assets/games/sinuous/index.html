@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>sinuous</title>
+</head>
+<body>
+<canvas id='cnv' style="position:absolute;left:50;top:10;cursor:crosshair;" onmouseover="getcursor(event)"onmousemove="getcursor(event)">Canvas not supported</canvas>
+<br>
+<div id='pos' style='position:absolute;top:20;left:1000;'>Position</div>
+<script>
+var x2,y2;
+function rand(n)
+{
+	return Math.floor(Math.random()*n);
+}
+var c=document.getElementById('cnv');
+c.width=800;c.height=600;
+var ctx=c.getContext('2d');
+ctx.fillStyle='black';
+ctx.fillRect(0,0,800,600);
+var dots=new Array();
+var rad;
+for(var i=0;i<50;i++)
+{
+	dots[i]=new Array(4);
+	rad=rand(2);
+	if(rad==0)
+	{
+	dots[i][0]=rand(800);
+	//console.log(dots[i][0]);
+	dots[i][1]=0;
+	}
+	else
+	{
+	dots[i][0]=0;
+	dots[i][1]=rand(600);
+	}
+	dots[i][2]=rand(8)+4;
+	dots[i][3]=rand(7)+2;
+}
+
+function renderdots(v)
+{
+	ctx.fillStyle='black';
+	ctx.fillRect(0,0,800,600);
+ for(var i=0;i<50;i++)
+ {
+	ctx.beginPath();
+	ctx.arc(v[i][0],v[i][1],v[i][2],0,Math.PI*2);
+	//console.log(v[i][0]);
+	ctx.closePath();
+	ctx.fillStyle='red';
+	ctx.fill();
+	}
+}
+var flag=0;
+var id=setInterval(function()
+{	
+	
+	for (var i=0;i<50;i++)
+	{dots[i][0]=(dots[i][0]+dots[i][3])%800;
+	dots[i][1]=(dots[i][1]+dots[i][3])%600;
+	
+	}
+	renderdots(dots);
+	ctx.beginPath();
+	ctx.arc(x2-15,y2-15,5,0,Math.PI*2);
+	ctx.fillStyle='yellow';
+	ctx.closePath();
+	ctx.fill();
+	for(var i=0;i<40;i++)
+	if(x2<=dots[i][0]+dots[i][2]&&x2>=dots[i][0]-dots[i][2] && y2<=dots[i][1]+dots[i][2] &&y2>=dots[i][1]-dots[i][2])
+	{ flag=1;break;}
+	if (flag==1)
+	{alert('You lose');
+	 clearInterval(id);
+	 }
+},50);
+
+function getcursor(event)
+{	
+	var x1=event.layerX;
+	var y1=event.layerY;
+	
+	document.getElementById('pos').innerHTML=x1+' , '+y1;
+	ctx.beginPath();
+	ctx.arc(x1-15,y1-15,5,0,Math.PI*2);
+	ctx.fillStyle='yellow';
+	ctx.closePath();
+	ctx.fill();
+	x2=x1;y2=y1;
+	
+}
+</script>
+</body>
+</html>

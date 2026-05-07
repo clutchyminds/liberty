@@ -122,6 +122,46 @@ a { text-decoration: none; color: inherit; }
     margin-top: 2rem;
 }
 
+/* --- CONTROLS (SEARCH & FILTER) --- */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.controls input, .controls select {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 15px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+    min-width: 200px;
+}
+
+.controls input:focus, .controls select:focus {
+    border-color: var(--accent);
+}
+
+/* --- TAGS DANS LES CARTES --- */
+.tag-label {
+    font-size: 0.65rem;
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-transform: uppercase;
+}
+
+/* Utilité pour masquer les cartes via JS */
+.game-card.hidden {
+    display: none;
+}
+
 /* --- CARDS (Flat & Borders) --- */
 .game-card {
     background-color: var(--surface-color);
